@@ -20,12 +20,12 @@ const navLinks = [
 
 // Fallback categories for initial load
 const defaultCategories = [
-  { name: 'Ghee Batti', nameHi: 'गी बत्ती', icon: '🔥', href: '/category/ghee-batti' },
-  { name: 'Diya', nameHi: 'दीया', icon: '🪔', href: '/category/diya' },
-  { name: 'Agarbatti', nameHi: 'अगरबत्ती', icon: '🌸', href: '/category/agarbatti' },
-  { name: 'Puja Thali', nameHi: 'पूजा थाली', icon: '🙏', href: '/category/puja-thali' },
-  { name: 'Idols', nameHi: 'मूर्ति', icon: '🕉️', href: '/category/idols' },
-  { name: 'Rudraksha', nameHi: 'रुद्राक्ष', icon: '📿', href: '/category/rudraksha' },
+  { name: 'Ghee Batti', nameHi: 'गी बत्ती', icon: '🔥', href: '/category/ghee-batti', image: null },
+  { name: 'Diya', nameHi: 'दीया', icon: '🪔', href: '/category/diya', image: null },
+  { name: 'Agarbatti', nameHi: 'अगरबत्ती', icon: '🌸', href: '/category/agarbatti', image: null },
+  { name: 'Puja Thali', nameHi: 'पूजा थाली', icon: '🙏', href: '/category/puja-thali', image: null },
+  { name: 'Idols', nameHi: 'मूर्ति', icon: '🕉️', href: '/category/idols', image: null },
+  { name: 'Rudraksha', nameHi: 'रुद्राक्ष', icon: '📿', href: '/category/rudraksha', image: null },
 ];
 
 // Language Selector Component (Creative Toggle)

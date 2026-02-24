@@ -52,13 +52,13 @@ const colorMap: Record<string, string> = {
 };
 
 // Fallback categories
-const fallbackCategories = [
-  { id: 'diya-batti', name: 'Diya/Batti', nameHi: 'दीया/बत्ती', icon: '🪔', color: 'from-orange-500 to-amber-500', description: 'Pure Ghee Diyas & Battis', slug: 'diya-batti' },
-  { id: 'agarbatti', name: 'Agarbatti', nameHi: 'अगरबत्ती', icon: '🌸', color: 'from-pink-500 to-rose-500', description: 'Fragrant Incense Sticks', slug: 'agarbatti' },
-  { id: 'idols', name: 'Idols', nameHi: 'मूर्ति', icon: '🕉️', color: 'from-amber-600 to-yellow-600', description: 'Sacred Deity Idols', slug: 'idols' },
-  { id: 'puja-kits', name: 'Puja Kits', nameHi: 'पूजा किट', icon: '🙏', color: 'from-red-500 to-orange-500', description: 'Complete Puja Samagri', slug: 'puja-kits' },
-  { id: 'rudraksha', name: 'Rudraksha', nameHi: 'रुद्राक्ष', icon: '📿', color: 'from-amber-700 to-amber-900', description: 'Sacred Beads & Malas', slug: 'rudraksha' },
-  { id: 'yantra', name: 'Machinery', nameHi: 'यंत्र', icon: '⚙️', color: 'from-slate-600 to-slate-800', description: 'Temple Construction', slug: 'yantra' },
+const fallbackCategories: CategoryDisplay[] = [
+  { id: 'diya-batti', name: 'Diya/Batti', nameHi: 'दीया/बत्ती', icon: '🪔', color: 'from-orange-500 to-amber-500', description: 'Pure Ghee Diyas & Battis', slug: 'diya-batti', image: undefined },
+  { id: 'agarbatti', name: 'Agarbatti', nameHi: 'अगरबत्ती', icon: '🌸', color: 'from-pink-500 to-rose-500', description: 'Fragrant Incense Sticks', slug: 'agarbatti', image: undefined },
+  { id: 'idols', name: 'Idols', nameHi: 'मूर्ति', icon: '🕉️', color: 'from-amber-600 to-yellow-600', description: 'Sacred Deity Idols', slug: 'idols', image: undefined },
+  { id: 'puja-kits', name: 'Puja Kits', nameHi: 'पूजा किट', icon: '🙏', color: 'from-red-500 to-orange-500', description: 'Complete Puja Samagri', slug: 'puja-kits', image: undefined },
+  { id: 'rudraksha', name: 'Rudraksha', nameHi: 'रुद्राक्ष', icon: '📿', color: 'from-amber-700 to-amber-900', description: 'Sacred Beads & Malas', slug: 'rudraksha', image: undefined },
+  { id: 'yantra', name: 'Machinery', nameHi: 'यंत्र', icon: '⚙️', color: 'from-slate-600 to-slate-800', description: 'Temple Construction', slug: 'yantra', image: undefined },
 ];
 
 interface CategoryDisplay {

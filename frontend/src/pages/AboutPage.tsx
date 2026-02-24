@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { useUIStore } from '@/store';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { cn } from '@/lib/utils';
-import { Award, Heart, Users, Sparkles, Plus, Minus, Milestone } from 'lucide-react';
+import { Sparkles, Plus, Minus, Milestone } from 'lucide-react';
 
 const stats = [
   { value: '25+', labelEn: 'Years Experience', labelHi: 'वर्षों का अनुभव' },
@@ -13,36 +13,6 @@ const stats = [
   { value: '50+', labelEn: 'Temples Served', labelHi: 'मंदिर सेवा' },
 ];
 
-const values = [
-  {
-    icon: Heart,
-    titleEn: 'Purity First',
-    titleHi: 'शुद्धता पहले',
-    descEn: 'Every product is personally verified for purity by our founder.',
-    descHi: 'प्रत्येक उत्पाद की शुद्धता की जांच हमारे संस्थापक द्वारा व्यक्तिगत रूप से की जाती है।',
-  },
-  {
-    icon: Award,
-    titleEn: 'Quality Guaranteed',
-    titleHi: 'गुणवत्ता की गारंटी',
-    descEn: 'We use only the finest materials sourced from trusted suppliers.',
-    descHi: 'हम विश्वसनीय आपूर्तिकर्ताओं से केवल बेहतरीन सामग्री का उपयोग करते हैं।',
-  },
-  {
-    icon: Users,
-    titleEn: 'Customer Centric',
-    titleHi: 'ग्राहक केंद्रित',
-    descEn: 'Your satisfaction is our top priority. We are always here to help.',
-    descHi: 'आपकी संतुष्टि हमारी शीर्ष प्राथमिकता है। हम हमेशा मदद के लिए यहां हैं।',
-  },
-  {
-    icon: Sparkles,
-    titleEn: 'Traditional Values',
-    titleHi: 'पारंपरिक मूल्य',
-    descEn: 'We preserve ancient traditions while embracing modern technology.',
-    descHi: 'हम आधुनिक तकनीक को अपनाते हुए प्राचीन परंपराओं को संजोए रखते हैं।',
-  },
-];
 
 const policies = [
   {

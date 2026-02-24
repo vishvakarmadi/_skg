@@ -1,9 +1,7 @@
 import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion"
 import { useRef } from "react"
-import { useLanguage } from "@/contexts/LanguageContext"
 
 export function GheeWicksFeature() {
-    const { isHindi } = useLanguage()
     const ref = useRef(null)
     const shouldReduceMotion = useReducedMotion()
 

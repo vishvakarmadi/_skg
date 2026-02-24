@@ -11,14 +11,13 @@ import {
   Factory,
   PenTool,
   Wrench,
-  Quote,
   Plus,
   Minus,
   Loader2
 } from 'lucide-react';
 
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useProducts, useTestimonials, useBanners } from '@/hooks/useApi';
+import { useProducts, useBanners } from '@/hooks/useApi';
 import { getImageUrl } from '@/lib/utils';
 import { TestimonialsSection } from '@/sections/TestimonialsSection';
 
@@ -121,9 +120,6 @@ export function MachineryPage() {
   const { data, loading } = useProducts({ type: 'machinery', per_page: 100 });
   const machines = data?.data || [];
 
-  // 2. Fetch Machinery Testimonials
-  const { data: machineTestimonials } = useTestimonials({ product_type: 'machinery', limit: 4 });
-  const testimonials = machineTestimonials || [];
 
   // 3. Fetch Machinery Banner
   const { data: banners } = useBanners();
@@ -168,9 +164,9 @@ export function MachineryPage() {
               {isHindi && machineryBanner?.titleHi ? machineryBanner.titleHi : (machineryBanner?.title || (isHindi ? 'मंदिर निर्माण यंत्र' : 'Industrial Machinery'))}
             </h1>
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8">
-              {isHindi && machineryBanner?.subtitleHi ? machineryBanner.subtitleHi : (machineryBanner?.subtitle || (isHindi
+              {machineryBanner?.subtitle || (isHindi
                 ? 'SKG ENTERPRISE के उन्नत यंत्रों के साथ अपने उत्पादन को बढ़ाएं।'
-                : 'Scale your production with SKG ENTERPRISE advanced machinery.'))}
+                : 'Scale your production with SKG ENTERPRISE advanced machinery.')}
             </p>
           </motion.div>
         </div>
@@ -413,7 +409,7 @@ export function MachineryPage() {
           </motion.div>
 
           <div className="space-y-4">
-            {faqs.map((faq, index) => (
+            {faqs.map((faq) => (
               <div
                 key={faq.id}
                 className="bg-card border border-border rounded-xl overflow-hidden"
