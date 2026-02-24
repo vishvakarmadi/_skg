@@ -1,0 +1,29 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Map /storage/uploads to public/uploads
+    RewriteRule ^storage/uploads/(.*)$ public/uploads/$1 [L,NC]
+
+    # Cleanly map API, Sanctum, Storage, and utility commands to Laravel's index.php
+    # This intentionally intercepts /storage so we can let the web.php fallback route serve images securely
+    # avoiding hostinger symlink and path issues (since /storage directory exists, it would 404 naturally)
+    RewriteCond %{REQUEST_URI} ^/(api|sanctum|create-symlink|artisan-storage-link|storage) [NC]
+    RewriteRule ^(.*)$ public/index.php [L]
+
+    # Serve static files directly (if they exist)
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Fallback all other routes to React's index.html for SPA routing
+    RewriteRule ^ index.html [L]
+</IfModule>
+
+<IfModule mod_mime.c>
+    AddType application/javascript .js
+    AddType text/css .css
+</IfModule>

@@ -1,0 +1,500 @@
+
+> my-app@0.0.0 lint
+> eslint .
+
+
+D:\u\grocery\qwen\skg\app\src\api\index.ts
+   10:87  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  105:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  215:24  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  244:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  338:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  341:31  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  359:20  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\api\transform.ts
+   17:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   19:68  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   23:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   53:57  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   67:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   80:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   95:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   95:49  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  100:39  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\components\ui-custom\GheeWicksFeature copy 2.tsx
+   94:35  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\u\grocery\qwen\skg\app\src\components\ui-custom\GheeWicksFeature copy 2.tsx:94:35
+  92 |                         initial={{
+  93 |                             y: "60%",
+> 94 |                             x: `${Math.random() * 60 - 30}%`,
+     |                                   ^^^^^^^^^^^^^ Cannot call impure function
+  95 |                             opacity: 0,
+  96 |                         }}
+  97 |                         animate={{                                                    react-hooks/purity
+  102:43  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\u\grocery\qwen\skg\app\src\components\ui-custom\GheeWicksFeature copy 2.tsx:102:43
+  100 |                         }}
+  101 |                         transition={{
+> 102 |                             duration: 6 + Math.random() * 4,
+      |                                           ^^^^^^^^^^^^^ Cannot call impure function
+  103 |                             repeat: Infinity,
+  104 |                             delay: Math.random() * 5,
+  105 |                             ease: "easeOut",  react-hooks/purity
+  104:36  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\u\grocery\qwen\skg\app\src\components\ui-custom\GheeWicksFeature copy 2.tsx:104:36
+  102 |                             duration: 6 + Math.random() * 4,
+  103 |                             repeat: Infinity,
+> 104 |                             delay: Math.random() * 5,
+      |                                    ^^^^^^^^^^^^^ Cannot call impure function
+  105 |                             ease: "easeOut",
+  106 |                         }}
+  107 |                     />                        react-hooks/purity
+
+D:\u\grocery\qwen\skg\app\src\components\ui-custom\GheeWicksFeature.tsx
+    6:13  error  'isHindi' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-unused-vars
+   94:35  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\u\grocery\qwen\skg\app\src\components\ui-custom\GheeWicksFeature.tsx:94:35
+  92 |                         initial={{
+  93 |                             y: "60%",
+> 94 |                             x: `${Math.random() * 60 - 30}%`,
+     |                                   ^^^^^^^^^^^^^ Cannot call impure function
+  95 |                             opacity: 0,
+  96 |                         }}
+  97 |                         animate={{                                                    react-hooks/purity
+  102:43  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\u\grocery\qwen\skg\app\src\components\ui-custom\GheeWicksFeature.tsx:102:43
+  100 |                         }}
+  101 |                         transition={{
+> 102 |                             duration: 6 + Math.random() * 4,
+      |                                           ^^^^^^^^^^^^^ Cannot call impure function
+  103 |                             repeat: Infinity,
+  104 |                             delay: Math.random() * 5,
+  105 |                             ease: "easeOut",  react-hooks/purity
+  104:36  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\u\grocery\qwen\skg\app\src\components\ui-custom\GheeWicksFeature.tsx:104:36
+  102 |                             duration: 6 + Math.random() * 4,
+  103 |                             repeat: Infinity,
+> 104 |                             delay: Math.random() * 5,
+      |                                    ^^^^^^^^^^^^^ Cannot call impure function
+  105 |                             ease: "easeOut",
+  106 |                         }}
+  107 |                     />                        react-hooks/purity
+
+D:\u\grocery\qwen\skg\app\src\components\ui-custom\Navbar.tsx
+   92:6   warning  React Hook useEffect has missing dependencies: 'isMobileMenuOpen' and 'toggleMobileMenu'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+  101:32  error    Unexpected any. Specify a different type                                                                                                      @typescript-eslint/no-explicit-any
+  101:73  error    Unexpected any. Specify a different type                                                                                                      @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\components\ui\badge.tsx
+  46:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+D:\u\grocery\qwen\skg\app\src\components\ui\button-group.tsx
+  82:3  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+D:\u\grocery\qwen\skg\app\src\components\ui\button.tsx
+  62:18  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+D:\u\grocery\qwen\skg\app\src\components\ui\form.tsx
+  159:3  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+D:\u\grocery\qwen\skg\app\src\components\ui\navigation-menu.tsx
+  167:3  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+D:\u\grocery\qwen\skg\app\src\components\ui\sidebar.tsx
+  611:26  error  Error: Cannot call impure function during render
+
+`Math.random` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\u\grocery\qwen\skg\app\src\components\ui\sidebar.tsx:611:26
+  609 |   // Random width between 50 to 90%.
+  610 |   const width = React.useMemo(() => {
+> 611 |     return `${Math.floor(Math.random() * 40) + 50}%`
+      |                          ^^^^^^^^^^^^^ Cannot call impure function
+  612 |   }, [])
+  613 |
+  614 |   return (  react-hooks/purity
+  725:3   error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   react-refresh/only-export-components
+
+D:\u\grocery\qwen\skg\app\src\components\ui\toggle.tsx
+  45:18  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+D:\u\grocery\qwen\skg\app\src\contexts\LanguageContext.tsx
+  413:59  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       @typescript-eslint/no-explicit-any
+  433:5   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\u\grocery\qwen\skg\app\src\contexts\LanguageContext.tsx:433:5
+  431 |   useEffect(() => {
+  432 |     const detected = detectLanguage();
+> 433 |     setLanguageState(detected);
+      |     ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  434 |     document.documentElement.lang = detected;
+  435 |     setIsLoaded(true);
+  436 |   }, []);  react-hooks/set-state-in-effect
+  473:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 react-refresh/only-export-components
+
+D:\u\grocery\qwen\skg\app\src\hooks\useApi.ts
+   56:26  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   57:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   58:11  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   87:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  128:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  146:64  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  159:64  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  172:64  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  206:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  229:64  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  239:48  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  259:64  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  277:64  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  294:64  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  342:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  364:64  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  404:64  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  422:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  437:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  451:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  465:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  495:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  520:23  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\i18n\index.ts
+  352:14  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  359:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  397:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\lib\utils.ts
+  17:7  error  'cleanPath' is never reassigned. Use 'const' instead  prefer-const
+
+D:\u\grocery\qwen\skg\app\src\pages\AboutPage.tsx
+  16:7  error  'values' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        @typescript-eslint/no-unused-vars
+  82:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\u\grocery\qwen\skg\app\src\pages\AboutPage.tsx:82:7
+  80 |     const hash = location.hash.replace('#', '');
+  81 |     if (hash && ['privacy', 'terms', 'refund'].includes(hash)) {
+> 82 |       setOpenPolicy(hash);
+     |       ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  83 |       const element = document.getElementById(hash);
+  84 |       if (element) {
+  85 |         element.scrollIntoView({ behavior: 'smooth', block: 'center' });  react-hooks/set-state-in-effect
+
+D:\u\grocery\qwen\skg\app\src\pages\AccountPage.tsx
+   69:13  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\u\grocery\qwen\skg\app\src\pages\AccountPage.tsx:69:13
+  67 |     useEffect(() => {
+  68 |         if (user) {
+> 69 |             setProfileName(user.name || '');
+     |             ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  70 |             setProfileEmail(user.email || '');
+  71 |             setProfilePhone((user as any).phone || '');
+  72 |         }                                         react-hooks/set-state-in-effect
+   71:38  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-explicit-any
+   79:8   warning  React Hook useEffect has a missing dependency: 'isHindi'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  react-hooks/exhaustive-deps
+   84:13  error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\u\grocery\qwen\skg\app\src\pages\AccountPage.tsx:84:13
+  82 |         if (passwordSuccess) {
+  83 |             toast.success(isHindi ? 'पासवर्ड बदल गया' : 'Password changed successfully');
+> 84 |             setCurrentPassword('');
+     |             ^^^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  85 |             setNewPassword('');
+  86 |             setConfirmPassword('');
+  87 |         }  react-hooks/set-state-in-effect
+   88:8   warning  React Hook useEffect has a missing dependency: 'isHindi'. Either include it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  react-hooks/exhaustive-deps
+  133:14  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-explicit-any
+  176:36  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-explicit-any
+  177:34  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-explicit-any
+  177:70  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\CategoriesPage.tsx
+   50:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  104:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\CheckoutPage.tsx
+   68:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   90:52  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+   94:45  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  108:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  119:21  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\ContactPage.tsx
+  61:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\u\grocery\qwen\skg\app\src\pages\ContactPage.tsx:61:7
+  59 |     const subjectParam = searchParams.get('subject');
+  60 |     if (subjectParam) {
+> 61 |       setFormData(prev => ({ ...prev, subject: subjectParam }));
+     |       ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  62 |     }
+  63 |   }, [searchParams]);
+  64 |  react-hooks/set-state-in-effect
+
+D:\u\grocery\qwen\skg\app\src\pages\ForgotPasswordPage.tsx
+  21:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  27:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\LoginPage.tsx
+  25:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  26:43  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  58:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\MachineryPage.tsx
+   14:3   error  'Quote' is defined but never used                  @typescript-eslint/no-unused-vars
+  126:9   error  'testimonials' is assigned a value but never used  @typescript-eslint/no-unused-vars
+  277:39  error  Unexpected any. Specify a different type           @typescript-eslint/no-explicit-any
+  317:96  error  Unexpected any. Specify a different type           @typescript-eslint/no-explicit-any
+  416:29  error  'index' is defined but never used                  @typescript-eslint/no-unused-vars
+
+D:\u\grocery\qwen\skg\app\src\pages\OrderSuccessPage.tsx
+  17:91  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+D:\u\grocery\qwen\skg\app\src\pages\OrderSuccessPage.tsx:17:91
+  15 |   const location = useLocation();
+  16 |   const [searchParams] = useSearchParams();
+> 17 |   const orderNumber = location.state?.orderNumber || searchParams.get('order') || 'SKG' + Date.now().toString().slice(-8);
+     |                                                                                           ^^^^^^^^^^ Cannot call impure function
+  18 |
+  19 |   /* 
+  20 |    * Fetch order details to check payment status before clearing cart  react-hooks/purity
+
+D:\u\grocery\qwen\skg\app\src\pages\OrdersPage.tsx
+  11:59  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\ProductsPage.tsx
+  52:38  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                @typescript-eslint/no-explicit-any
+  89:26  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\u\grocery\qwen\skg\app\src\pages\ProductsPage.tsx:89:26
+  87 |
+  88 |
+> 89 |     if (search !== null) setSearchQuery(search);
+     |                          ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  90 |
+  91 |     // Priority: Route Param > Search Param
+  92 |     if (slug) {  react-hooks/set-state-in-effect
+
+D:\u\grocery\qwen\skg\app\src\pages\RegisterPage.tsx
+  26:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  48:68  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  72:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\ResetPasswordPage.tsx
+  31:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  50:25  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\StoriesPage.tsx
+  31:27  error    Unexpected any. Specify a different type                                                                                      @typescript-eslint/no-explicit-any
+  39:52  error    Unexpected any. Specify a different type                                                                                      @typescript-eslint/no-explicit-any
+  41:49  error    Unexpected any. Specify a different type                                                                                      @typescript-eslint/no-explicit-any
+  65:8   warning  React Hook useEffect has a missing dependency: 'fetchStories'. Either include it or remove the dependency array               react-hooks/exhaustive-deps
+  74:8   warning  React Hook useEffect has missing dependencies: 'fetchStories' and 'page'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\u\grocery\qwen\skg\app\src\pages\StoryDetailPage.tsx
+  25:53  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  38:86  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  40:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  45:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\admin\AdminBannerForm.tsx
+   35:46   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+   38:9    error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+   45:10   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+   70:66   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+   71:60   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+   99:28   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  106:28   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  141:13   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  188:72   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  215:76   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  215:109  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\admin\AdminBanners.tsx
+  36:66  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  69:13  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  73:69  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\admin\AdminBlogForm.tsx
+   68:60  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  136:13  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+
+D:\u\grocery\qwen\skg\app\src\pages\admin\AdminBlogs.tsx
+  48:52  error    Unexpected any. Specify a different type                                                                       @typescript-eslint/no-explicit-any
+  51:58  error    Unexpected any. Specify a different type                                                                       @typescript-eslint/no-explicit-any
+  74:8   warning  React Hook useEffect has a missing dependency: 'fetchBlogs'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  83:8   warning  React Hook useEffect has a missing dependency: 'fetchBlogs'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\u\grocery\qwen\skg\app\src\pages\admin\AdminCategories.tsx
+  35:69  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\admin\AdminCategoryForm.tsx
+   46:27   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+   47:10   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+   66:64   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  136:13   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  187:130  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  237:72   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\admin\AdminContacts.tsx
+  37:17  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  54:83  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  64:13  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+
+D:\u\grocery\qwen\skg\app\src\pages\admin\AdminDashboard.tsx
+   29:40  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  125:66  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\admin\AdminMachinery.tsx
+  39:50  error    Unexpected any. Specify a different type                                                                          @typescript-eslint/no-explicit-any
+  57:27  error    Unexpected any. Specify a different type                                                                          @typescript-eslint/no-explicit-any
+  69:56  error    Unexpected any. Specify a different type                                                                          @typescript-eslint/no-explicit-any
+  85:8   warning  React Hook useEffect has a missing dependency: 'fetchProducts'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  94:8   warning  React Hook useEffect has a missing dependency: 'fetchProducts'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\u\grocery\qwen\skg\app\src\pages\admin\AdminOrders.tsx
+   54:54  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+   56:47  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+   99:9   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  156:46  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  158:46  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  166:89  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\admin\AdminProductForm.tsx
+   72:10   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  132:60   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  153:56   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  176:59   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  260:53   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  304:13   error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  515:110  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  530:61   error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  531:118  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  554:115  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+  576:132  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\pages\admin\AdminProducts.tsx
+  39:50  error    Unexpected any. Specify a different type                                                                          @typescript-eslint/no-explicit-any
+  58:27  error    Unexpected any. Specify a different type                                                                          @typescript-eslint/no-explicit-any
+  67:56  error    Unexpected any. Specify a different type                                                                          @typescript-eslint/no-explicit-any
+  83:8   warning  React Hook useEffect has a missing dependency: 'fetchProducts'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  92:8   warning  React Hook useEffect has a missing dependency: 'fetchProducts'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+
+D:\u\grocery\qwen\skg\app\src\pages\admin\AdminUsers.tsx
+  34:17  error  Use "@ts-expect-error" instead of "@ts-ignore", as "@ts-ignore" will do nothing if the following line is error-free  @typescript-eslint/ban-ts-comment
+  63:67  error  Unexpected any. Specify a different type                                                                             @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\sections\BannerCarousel.tsx
+   74:26  error  Unexpected any. Specify a different type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-explicit-any
+  142:7   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+D:\u\grocery\qwen\skg\app\src\sections\BannerCarousel.tsx:142:7
+  140 |   useEffect(() => {
+  141 |     if (currentIndex >= banners.length) {
+> 142 |       setCurrentIndex(0);
+      |       ^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  143 |     }
+  144 |   }, [banners.length, currentIndex]);
+  145 |  react-hooks/set-state-in-effect
+
+D:\u\grocery\qwen\skg\app\src\sections\CategoryMandala.tsx
+  173:19  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  175:16  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  186:46  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\sections\CategorySlider.tsx
+  26:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  26:65  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\sections\StoriesSection.tsx
+  22:86  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  24:50  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\sections\TestimonialsSection.tsx
+  26:35  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\store\index.ts
+  220:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  279:29  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  281:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  286:63  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  302:28  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  304:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  306:64  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  361:56  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  401:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  403:33  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  409:36  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  425:32  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  427:38  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  429:72  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+D:\u\grocery\qwen\skg\app\src\types\index.ts
+  322:30  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 197 problems (186 errors, 11 warnings)
+  1 error and 0 warnings potentially fixable with the `--fix` option.
+

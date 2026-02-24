@@ -1,0 +1,570 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   SKG ENTERPRISE - DUAL UI MODE SYSTEM
+   Bhakti Bazaar (Spiritual) & Yantra Industrial
+   ============================================ */
+
+@layer base {
+  /* ============================================
+     BHAKTI BAZAAR MODE (Default - Spiritual)
+     ============================================ */
+  :root {
+    /* Spiritual Color Palette */
+    --saffron: 25 100% 50%;
+    --saffron-light: 30 100% 55%;
+    --temple-gold: 45 100% 50%;
+    --gold-dark: 40 100% 45%;
+    --deep-maroon: 0 100% 25%;
+    --maroon-light: 0 70% 35%;
+    --sacred-cream: 45 100% 95%;
+    --cream-dark: 40 60% 90%;
+    --midnight-temple: 25 60% 5%;
+    --copper-dark: 20 40% 12%;
+    
+    /* Shadcn Theme Variables - Bhakti Mode */
+    --background: 45 100% 97%;
+    --foreground: 25 60% 8%;
+    --card: 45 80% 98%;
+    --card-foreground: 25 60% 8%;
+    --popover: 45 80% 98%;
+    --popover-foreground: 25 60% 8%;
+    --primary: 25 100% 50%;
+    --primary-foreground: 45 100% 97%;
+    --secondary: 40 60% 90%;
+    --secondary-foreground: 25 60% 8%;
+    --muted: 40 40% 92%;
+    --muted-foreground: 25 30% 35%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 25 60% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 45 100% 97%;
+    --border: 35 40% 85%;
+    --input: 35 40% 90%;
+    --ring: 25 100% 50%;
+    --radius: 0.75rem;
+
+    /* UI Mode Indicator */
+    --ui-mode: 'bhakti';
+    
+    /* Card Styles */
+    --card-radius: 12px;
+    --card-shadow: 0 4px 20px rgba(255, 111, 0, 0.1);
+    --card-shadow-hover: 0 8px 32px rgba(255, 160, 0, 0.2);
+    
+    /* Animation Timing */
+    --ease-sacred: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-fluid: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-diya: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* ============================================
+     YANTRA INDUSTRIAL MODE (Machinery/B2B)
+     ============================================ */
+  [data-ui-mode="yantra"] {
+    --ui-mode: 'yantra';
+    
+    /* Industrial Color Palette */
+    --steel: 220 15% 25%;
+    --steel-light: 220 12% 35%;
+    --copper: 20 60% 35%;
+    --bronze: 30 50% 40%;
+    --industrial-dark: 220 25% 8%;
+    --industrial-gray: 220 10% 45%;
+    
+    /* Shadcn Theme Variables - Yantra Mode */
+    --background: 220 20% 8%;
+    --foreground: 0 0% 95%;
+    --card: 220 18% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 220 18% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 25 80% 45%;
+    --primary-foreground: 0 0% 95%;
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 220 12% 18%;
+    --muted-foreground: 220 10% 60%;
+    --accent: 30 50% 40%;
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 220 15% 22%;
+    --input: 220 15% 18%;
+    --ring: 25 80% 45%;
+    --radius: 4px;
+    
+    /* Card Styles - Industrial */
+    --card-radius: 4px;
+    --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --card-shadow-hover: 0 4px 16px rgba(255, 140, 0, 0.15);
+  }
+
+  /* ============================================
+     DARK MODE - Midnight Temple
+     ============================================ */
+  .dark {
+    --background: 25 60% 5%;
+    --foreground: 45 80% 92%;
+    --card: 25 50% 8%;
+    --card-foreground: 45 80% 92%;
+    --popover: 25 50% 8%;
+    --popover-foreground: 45 80% 92%;
+    --primary: 30 100% 55%;
+    --primary-foreground: 25 60% 5%;
+    --secondary: 25 40% 15%;
+    --secondary-foreground: 45 80% 92%;
+    --muted: 25 30% 15%;
+    --muted-foreground: 35 30% 60%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 25 60% 5%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 45 80% 92%;
+    --border: 25 30% 18%;
+    --input: 25 30% 15%;
+    --ring: 30 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+  
+  /* Devanagari Text Support */
+  .devanagari {
+    font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+  }
+  
+  /* Sacred Display Font */
+  .sacred-display {
+    font-family: 'Cinzel Decorative', 'Plus Jakarta Sans', serif;
+  }
+}
+
+@layer components {
+  /* ============================================
+     BHAKTI PRODUCT CARD (Spiritual)
+     ============================================ */
+  .bhakti-card {
+    @apply relative overflow-hidden;
+    border-radius: var(--card-radius);
+    background: linear-gradient(145deg, hsl(var(--card)), hsl(var(--sacred-cream)));
+    box-shadow: var(--card-shadow);
+    transition: all 0.4s var(--ease-sacred);
+  }
+  
+  .bhakti-card:hover {
+    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-4px);
+  }
+  
+  .bhakti-card::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 pointer-events-none;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 111, 0, 0.05));
+    transition: opacity 0.4s var(--ease-sacred);
+  }
+  
+  .bhakti-card:hover::before {
+    @apply opacity-100;
+  }
+  
+  /* Purity Badge */
+  .purity-badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium;
+    background: linear-gradient(135deg, hsl(var(--saffron)), hsl(var(--temple-gold)));
+    color: white;
+    border-radius: 20px;
+    font-family: 'Noto Sans Devanagari', sans-serif;
+  }
+  
+  /* ============================================
+     YANTRA PRODUCT CARD (Industrial)
+     ============================================ */
+  .yantra-card {
+    @apply relative overflow-hidden;
+    border-radius: var(--card-radius);
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--card-shadow);
+    transition: all 0.3s var(--ease-sacred);
+  }
+  
+  .yantra-card:hover {
+    border-color: hsl(var(--primary));
+    box-shadow: var(--card-shadow-hover);
+  }
+  
+  /* Hexagonal Motif for Yantra */
+  .yantra-hex {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  
+  /* ============================================
+     SACRED BUTTONS
+     ============================================ */
+  .btn-diya {
+    @apply relative overflow-hidden px-6 py-3 font-semibold text-white;
+    background: linear-gradient(135deg, hsl(var(--saffron)), hsl(var(--temple-gold)));
+    border-radius: 50px;
+    transition: all 0.3s var(--ease-fluid);
+  }
+  
+  .btn-diya::before {
+    content: '';
+    @apply absolute inset-0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .btn-diya:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 111, 0, 0.4);
+  }
+  
+  .btn-diya:hover::before {
+    opacity: 1;
+  }
+  
+  /* Ripple Effect for Diya Button */
+  .btn-diya-ripple {
+    @apply relative;
+  }
+  
+  .btn-diya-ripple::after {
+    content: '';
+    @apply absolute inset-0 rounded-full;
+    border: 2px solid hsl(var(--temple-gold));
+    animation: diya-ripple 2s infinite;
+  }
+  
+  @keyframes diya-ripple {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.5); opacity: 0; }
+  }
+  
+  /* ============================================
+     NAVIGATION STYLES
+     ============================================ */
+  .nav-sacred {
+    @apply sticky top-0 z-50 backdrop-blur-md;
+    background: hsl(var(--background) / 0.9);
+    border-bottom: 1px solid hsl(var(--border) / 0.5);
+  }
+  
+  /* Mode Toggle */
+  .mode-toggle {
+    @apply relative flex items-center gap-2 p-1 rounded-full;
+    background: hsl(var(--muted));
+    border: 1px solid hsl(var(--border));
+  }
+  
+  .mode-toggle-thumb {
+    @apply absolute w-8 h-8 rounded-full transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--saffron)), hsl(var(--temple-gold)));
+  }
+  
+  [data-ui-mode="yantra"] .mode-toggle-thumb {
+    background: linear-gradient(135deg, hsl(var(--steel)), hsl(var(--copper)));
+    transform: translateX(100%);
+  }
+  
+  /* ============================================
+     MANDALA NAVIGATION
+     ============================================ */
+  .mandala-container {
+    @apply relative flex items-center justify-center;
+    width: 400px;
+    height: 400px;
+  }
+  
+  .mandala-center {
+    @apply absolute z-10 flex items-center justify-center;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, hsl(var(--saffron)), hsl(var(--temple-gold)));
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(255, 111, 0, 0.4);
+  }
+  
+  .mandala-item {
+    @apply absolute flex flex-col items-center justify-center cursor-pointer;
+    width: 80px;
+    height: 80px;
+    background: hsl(var(--card));
+    border: 2px solid hsl(var(--border));
+    border-radius: 50%;
+    transition: all 0.4s var(--ease-sacred);
+  }
+  
+  .mandala-item:hover {
+    transform: scale(1.15);
+    border-color: hsl(var(--saffron));
+    box-shadow: 0 0 20px rgba(255, 111, 0, 0.3);
+  }
+  
+  /* ============================================
+     ANIMATED ELEMENTS
+     ============================================ */
+  
+  /* Floating Diya Animation */
+  .float-diya {
+    animation: float-diya 4s ease-in-out infinite;
+  }
+  
+  @keyframes float-diya {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+  }
+  
+  /* Gentle Glow Pulse */
+  .glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+  
+  @keyframes glow-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(255, 111, 0, 0.3),
+                  0 0 40px rgba(255, 111, 0, 0.1);
+    }
+    50% { 
+      box-shadow: 0 0 30px rgba(255, 111, 0, 0.5),
+                  0 0 60px rgba(255, 111, 0, 0.2);
+    }
+  }
+  
+  /* Sacred Scroll Indicator */
+  .scroll-indicator {
+    @apply relative w-6 h-10 rounded-full border-2;
+    border-color: hsl(var(--saffron));
+  }
+  
+  .scroll-indicator::before {
+    content: '';
+    @apply absolute left-1/2 top-2 w-1.5 h-1.5 rounded-full;
+    background: hsl(var(--saffron));
+    transform: translateX(-50%);
+    animation: scroll-bounce 2s infinite;
+  }
+  
+  @keyframes scroll-bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    50% { transform: translateX(-50%) translateY(12px); opacity: 0.3; }
+  }
+  
+  /* Smoke Effect */
+  .smoke-effect {
+    @apply absolute pointer-events-none;
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, transparent 70%);
+    filter: blur(20px);
+    animation: smoke-rise 8s ease-out infinite;
+  }
+  
+  @keyframes smoke-rise {
+    0% { transform: translateY(0) scale(1); opacity: 0.6; }
+    100% { transform: translateY(-100px) scale(2); opacity: 0; }
+  }
+  
+  /* Om Symbol Spinner */
+  .om-spinner {
+    @apply inline-block;
+    animation: om-spin 2s linear infinite;
+  }
+  
+  @keyframes om-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Sparkle Animation */
+  .sparkle {
+    @apply absolute w-2 h-2;
+    background: radial-gradient(circle, hsl(var(--temple-gold)), transparent);
+    border-radius: 50%;
+    animation: sparkle 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes sparkle {
+    0%, 100% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1); opacity: 1; }
+  }
+  
+  /* ============================================
+     WATERMARK & BRANDING
+     ============================================ */
+  .skg-watermark {
+    @apply fixed pointer-events-none select-none;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: 20vw;
+    color: hsl(var(--saffron) / 0.03);
+    z-index: 0;
+    white-space: nowrap;
+    transform: rotate(-15deg);
+  }
+  
+  .trademark-foil {
+    @apply absolute bottom-2 right-2;
+    font-size: 10px;
+    color: hsl(var(--temple-gold) / 0.6);
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);
+  }
+  
+  /* ============================================
+     PRODUCT FLY ANIMATION (Add to Cart)
+     ============================================ */
+  .fly-to-cart {
+    animation: fly-to-cart 0.8s var(--ease-sacred) forwards;
+  }
+  
+  @keyframes fly-to-cart {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(0.5); opacity: 0.8; }
+    100% { transform: scale(0) translate(var(--cart-x), var(--cart-y)); opacity: 0; }
+  }
+  
+  /* Particle Trail */
+  .particle-trail {
+    @apply absolute pointer-events-none;
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--temple-gold));
+    border-radius: 50%;
+    animation: particle-fade 0.6s ease-out forwards;
+  }
+  
+  @keyframes particle-fade {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0); opacity: 0; }
+  }
+  
+  /* ============================================
+     LOADING STATES
+     ============================================ */
+  .skeleton-torana {
+    @apply relative overflow-hidden;
+    background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--muted-foreground) / 0.1) 50%, hsl(var(--muted)) 75%);
+    background-size: 200% 100%;
+    animation: skeleton-shimmer 1.5s infinite;
+    clip-path: polygon(10% 0%, 90% 0%, 100% 100%, 0% 100%);
+  }
+  
+  @keyframes skeleton-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  
+  /* ============================================
+     SECTION DIVIDERS (Sacred Geometry)
+     ============================================ */
+  .divider-lotus {
+    @apply relative h-16;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'%3E%3Cpath d='M50 20 Q30 10 20 20 Q35 5 50 0 Q65 5 80 20 Q70 10 50 20' fill='none' stroke='%23FF6F00' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
+    background-repeat: repeat-x;
+    background-size: 100px 20px;
+  }
+  
+  .divider-wave {
+    @apply relative h-20;
+    background: linear-gradient(to right, transparent, hsl(var(--saffron) / 0.1), transparent);
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'%3E%3Cpath fill='%23000' d='M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z'/%3E%3C/svg%3E");
+    mask-size: cover;
+  }
+  
+  /* ============================================
+     UTILITY CLASSES
+     ============================================ */
+  .text-gradient-saffron {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--saffron)), hsl(var(--temple-gold)));
+  }
+  
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--temple-gold)), hsl(var(--saffron)));
+  }
+  
+  .bg-sacred-gradient {
+    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--sacred-cream)) 100%);
+  }
+  
+  .border-sacred {
+    border-image: linear-gradient(135deg, hsl(var(--saffron)), hsl(var(--temple-gold))) 1;
+  }
+  
+  /* Glassmorphism for cards */
+  .glass-sacred {
+    @apply backdrop-blur-md;
+    background: hsl(var(--card) / 0.8);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  
+  /* Focus styles */
+  .focus-sacred:focus {
+    @apply outline-none ring-2 ring-offset-2;
+    ring-color: hsl(var(--saffron));
+    ring-offset-color: hsl(var(--background));
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar but keep functionality */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Custom scrollbar for visible areas */
+  .scrollbar-sacred::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .scrollbar-sacred::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+  
+  .scrollbar-sacred::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, hsl(var(--saffron)), hsl(var(--temple-gold)));
+    border-radius: 4px;
+  }
+  
+  /* Perspective for 3D effects */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  /* Backface visibility */
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  /* GPU acceleration */
+  .gpu-accelerate {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+}
