@@ -295,9 +295,7 @@ export function Navbar() {
               <LanguageSelector />
 
               {/* Mode Toggle */}
-              <div className="hidden sm:block">
-                <ModeToggle />
-              </div>
+             
 
               {/* Wishlist */}
               <button
